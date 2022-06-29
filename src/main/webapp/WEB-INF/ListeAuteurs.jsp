@@ -20,6 +20,7 @@
            <th>Prénom</th>
            <th>Téléphone</th>
            <th>Email</th>
+           <th></th>
          </thead>
          <tbody>
             <c:forEach items="${ auteurs }" var="auteur">
@@ -28,6 +29,12 @@
                     <td><c:out value="${auteur.prenom }"/></td>
                     <td><c:out value="${auteur.telephone }"/></td>
                     <td><c:out value="${auteur.email }"/></td>
+                    <td>
+                        <a href="<c:url value="/liste-auteurs">
+                          <c:param name="id" value="${auteur.id }"/>
+                        </c:url>">Voir les détails l'auteur
+                        </a>
+                    </td>
                 </tr>
             </c:forEach>
 

@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import dao.Dao;
 import dao.DaoException;
 import dao.DaoFactory;
-import model.Auteur;
 import model.Livre;
 
 /**
@@ -37,15 +36,28 @@ public class ListeLivres extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		List<Livre> livres=null;
-		try {
-			livres = livreDao.lister();
-		} catch (DaoException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		var idStr=request.getParameter("id");
+		if(idStr==null) {
+			List<Livre> livres=null;
+			try {
+				livres = livreDao.lister();
+			} catch (DaoException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			request.setAttribute("livres", livres);
+			this.getServletContext().getRequestDispatcher("/WEB-INF/ListeLivres.jsp").forward(request, response);
+		} else {
+			var id = Long.parseLong(idStr);
+			try {
+				var livre = livreDao.trouver(id);
+				request.setAttribute("livre", livre);
+				this.getServletContext().getRequestDispatcher("/WEB-INF/DetailsLivre.jsp").forward(request, response);
+			} catch (DaoException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
-		request.setAttribute("livres", livres);
-		this.getServletContext().getRequestDispatcher("/WEB-INF/ListeLivres.jsp").forward(request, response);
 	}
 
 }

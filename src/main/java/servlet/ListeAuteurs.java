@@ -36,15 +36,29 @@ public class ListeAuteurs extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		List<Auteur> auteurs=null;
-		try {
-			auteurs = auteurDao.lister();
-		} catch (DaoException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		var idStr=request.getParameter("id");
+		if(idStr==null) {
+			List<Auteur> auteurs=null;
+			try {
+				auteurs = auteurDao.lister();
+			} catch (DaoException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			request.setAttribute("auteurs", auteurs);
+			this.getServletContext().getRequestDispatcher("/WEB-INF/ListeAuteurs.jsp").forward(request, response);
+		} else {
+			var id = Long.parseLong(idStr);
+			try {
+				var auteur = auteurDao.trouver(id);
+				request.setAttribute("auteur", auteur);
+				this.getServletContext().getRequestDispatcher("/WEB-INF/DetailsAuteur.jsp").forward(request, response);
+			} catch (DaoException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
-		request.setAttribute("auteurs", auteurs);
-		this.getServletContext().getRequestDispatcher("/WEB-INF/ListeAuteurs.jsp").forward(request, response);
+		
 	}
 
 }

@@ -28,6 +28,12 @@
                     <td><c:out value="${livre.titre }"/></td>
                     <td><c:out value="${livre.nbPages }"/></td>
                     <td><c:out value="${livre.categorie }"/></td>
+                    <td>
+                       <a href="<c:url value="/liste-livres">
+                          <c:param name="id" value="${livre.id }"/>
+                        </c:url>">Voir les détails du livre
+                       </a>
+                    </td>
                 </tr>
             </c:forEach>
 
