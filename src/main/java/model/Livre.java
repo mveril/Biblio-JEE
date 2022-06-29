@@ -8,6 +8,10 @@ public class Livre {
 	private Integer nbPages;
 	private String categorie;
 	
+	public Livre() {
+		
+	}
+	
 	public Livre(long id, Auteur auteur, String titre, int nbPages, String categorie) {
 		this.id = id;
 		this.auteur = auteur;
