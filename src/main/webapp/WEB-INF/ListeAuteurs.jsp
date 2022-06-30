@@ -16,11 +16,13 @@
     <c:otherwise>
        <table>
          <thead>
-           <th>Nom</th>
-           <th>Prénom</th>
-           <th>Téléphone</th>
-           <th>Email</th>
-           <th></th>
+           <tr>
+             <th>Nom</th>
+             <th>Prénom</th>
+             <th>Téléphone</th>
+             <th>Email</th>
+             <th>Actions</th>
+           </tr>
          </thead>
          <tbody>
             <c:forEach items="${ auteurs }" var="auteur">
@@ -32,7 +34,7 @@
                     <td>
                         <a href="<c:url value="/liste-auteurs">
                           <c:param name="id" value="${auteur.id }"/>
-                        </c:url>">Voir les détails l'auteur
+                        </c:url>">Voir les détails.
                         </a>
                     </td>
                 </tr>
