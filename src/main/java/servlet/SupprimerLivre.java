@@ -15,7 +15,7 @@ import model.Livre;
 /**
  * Servlet implementation class SupprimerLivre
  */
-@WebServlet("/SupprimerLivre")
+@WebServlet("/supprimer-livre")
 public class SupprimerLivre extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private Dao<Livre> livreDao;
