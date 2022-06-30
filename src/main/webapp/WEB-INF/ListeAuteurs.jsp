@@ -9,6 +9,7 @@
 </head>
 <body>
   <c:import url="/WEB-INF/menu.jsp" />
+  <a href="<c:url value="/ajouter-auteur"></c:url>">Ajouter un auteur</a>
   <c:choose>
     <c:when test="${ empty auteurs }">
        <p>Aucun auteur trouvé…</p>
