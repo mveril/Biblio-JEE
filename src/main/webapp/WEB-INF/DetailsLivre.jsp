@@ -22,6 +22,14 @@
          <th>Catégorie</th>
          <td><c:out value="${ livre.categorie }"/></td>
       </tr>
+      <tr>
+        <td>
+           <a href="<c:url value="/supprimer-livre">
+             <c:param name="id" value="${livre.id }"/>
+             </c:url>">Supprimer
+          </a>
+        </td>
+      </tr>
     </tbody>
   </table>
   

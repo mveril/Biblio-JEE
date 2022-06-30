@@ -19,6 +19,14 @@
          <th>✉️</th>
          <td><c:out value="${ auteur.email }"/></td>
       </tr>
+            <tr>
+        <td>
+           <a href="<c:url value="/supprimer-auteur">
+             <c:param name="id" value="${auteur.id }"/>
+             </c:url>">Supprimer
+          </a>
+        </td>
+      </tr>
     </tbody>
     
   </table>

@@ -21,7 +21,7 @@
              <th>Titre</th>
              <th>Nombre de pages</th>
              <th>Catégorie</th>
-             <th>Action</th>
+             <th  colspan="2">Actions</th>
            </tr>
          </thead>
          <tbody>
@@ -36,6 +36,12 @@
                           <c:param name="id" value="${livre.id }"/>
                         </c:url>">Voir les détails.
                        </a>
+                    </td>
+                    <td>
+                        <a href="<c:url value="/supprimer-livre">
+                          <c:param name="id" value="${livre.id }"/>
+                        </c:url>">Supprimer
+                        </a>
                     </td>
                 </tr>
             </c:forEach>

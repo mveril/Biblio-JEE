@@ -21,7 +21,7 @@
              <th>Prénom</th>
              <th>Téléphone</th>
              <th>Email</th>
-             <th>Actions</th>
+             <th colspan="2">Actions</th>
            </tr>
          </thead>
          <tbody>
@@ -35,6 +35,12 @@
                         <a href="<c:url value="/liste-auteurs">
                           <c:param name="id" value="${auteur.id }"/>
                         </c:url>">Voir les détails.
+                        </a>
+                    </td>
+                    <td>
+                        <a href="<c:url value="/supprimer-auteur">
+                          <c:param name="id" value="${auteur.id }"/>
+                        </c:url>">Supprimer.
                         </a>
                     </td>
                 </tr>
