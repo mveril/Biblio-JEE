@@ -44,6 +44,12 @@
                         </c:url>">Supprimer
                         </a>
                     </td>
+                                 <td>
+                        <a href="<c:url value="/modifier-livre">
+                          <c:param name="id" value="${livre.id }"/>
+                        </c:url>">Modifer
+                        </a>
+                    </td>
                 </tr>
             </c:forEach>
 

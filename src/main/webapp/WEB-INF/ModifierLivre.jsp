@@ -5,18 +5,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Modifier le livre <c:out value="${livre.titre }"/></title>
 </head>
 <body>
-  	<c:import url="/WEB-INF/menu.jsp" />
-
+	<c:import url="/WEB-INF/menu.jsp" />
 	<div class="form">
-		<form method="post" action="<c:url value="/ajouter-livre" />">
+		<form method="post" action="<c:url value="/modifier-livre"><c:param name="id" value="${livre.id }"/></c:url>">
 		
 			<fieldset>
-				<legend>Créer un livre</legend>
-				<c:import url="/WEB-INF/LivreFormFragment.jsp"/>
-			
+				<legend>Modifier <c:out value="${ livre.titre }"></c:out></legend>
+                <c:import url="/WEB-INF/LivreFormFragment.jsp"></c:import>
 			</fieldset>
 		
 			<input type="submit" value="Valider" />
