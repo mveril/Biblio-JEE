@@ -22,7 +22,7 @@
              <th>Prénom</th>
              <th>Téléphone</th>
              <th>Email</th>
-             <th colspan="2">Actions</th>
+             <th colspan="3">Actions</th>
            </tr>
          </thead>
          <tbody>
@@ -42,6 +42,12 @@
                         <a href="<c:url value="/supprimer-auteur">
                           <c:param name="id" value="${auteur.id }"/>
                         </c:url>">Supprimer.
+                        </a>
+                    </td>
+                    <td>
+                        <a href="<c:url value="/modifier-auteur">
+                          <c:param name="id" value="${auteur.id }"/>
+                        </c:url>">Modifier.
                         </a>
                     </td>
                 </tr>

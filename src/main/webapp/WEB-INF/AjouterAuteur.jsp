@@ -18,21 +18,7 @@
 			<fieldset>
 				<legend>Créer un auteur</legend>
 				
-				<label for="prenomAuteur">Prénom</label>
-				<input type="text" id="prenomAuteur" name="prenom" size="20" />
-				<br/>
-				
-				<label for="nomAuteur">Nom</label>
-				<input type="text" id="nomAuteur" name="nom" size="20" />
-				<br/>
-				
-				<label for="telephoneAuteur">Téléphone</label>
-				<input type="text" id="telephoneAuteur" name="telephone" size="10" />
-				<br/>
-				
-				<label for="emailAuteur">Email</label>
-				<input type="email" id="emailAuteur" name="email" size="60" />
-				<br/>
+                <c:import url="/WEB-INF/AuteurFormFragment.jsp"></c:import>
 			
 			</fieldset>
 		
